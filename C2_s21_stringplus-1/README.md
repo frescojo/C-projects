@@ -2,73 +2,6 @@
 
 Implementation of the string.h library with additions.
 
-The russian version of the task can be found in the repository.
-
-
-💡 [Tap here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) **to leave your feedback on the project**. It's anonymous and will help our team make your educational experience better. We recommend completing the survey immediately after the project.
-
-## Contents
-0. [Preamble](#preamble)
-1. [Chapter I](#chapter-i) \
-    1.1. [Introduction](#introduction)
-2. [Chapter II](#chapter-ii) \
-    2.1. [Information](#information)
-3. [Chapter III](#chapter-iii) \
-    3.1. [Part 1](#part-1-implementation-of-the-stringh-library-functions)  
-    3.2. [Part 2](#part-2-partial-implementation-of-the-sprintf-function)  
-    3.3. [Part 3](#part-3-bonus-implementation-of-some-format-modifiers-of-the-sprintf-function)  
-    3.4. [Part 4](#part-4-bonus-implementation-of-the-sscanf-function)  
-    3.5. [Part 5](#part-5-bonus-implementation-of-special-string-processing-functions)  
-
-
-## Preamble
-
-![s21_string+](misc/eng/images/s21_stringplus.png)
-
-1942, late evening, Bletchley Park, Alan Turing's desk. 
-
-For almost a year, a group of the brightest mathematicians, linguists, and crossword puzzle enthusiasts had been trying to solve the most difficult problem of all: breaking the German Enigma cipher, whose codes changed daily and whose number of possible combinations was about two to the power of 64. The group often had to come up with different algorithms, and they even developed a special set of keywords and their syntax for easy communication and logging, which is exactly like the well-known C language in our universe. What a remarkable coincidence! But there was a catch — the people at Bletchley Park had to remember the whole sequence of actions described in this language. 
-
-As you walk past Turing's desk, you notice a sheet of paper that says "For processing letters, punctuation marks, words and sentences". 
-
-*"What is this, Alan?"* you asked the thoughtful young man standing at the window.
-
-*"These are the functions that will make our lives easier! You know, cracking Enigma by brute force… I'd rather marry Joan than do that. So it seems we have to keep analysing texts, looking for patterns and coincidences. And so we're going to have to come up with different algorithms that are related to the processing of that very text and describe them. So we need a set of functions to help us do that. I'm working on them now."*
-
-*"And you are doing this using our new tool for representing unified algorithms?"*
-
-*"Yes, that is exactly what I am doing. Where else could we use these functions?"* Having said that, Turing looked at you as if you were an idiot. You noticed that and decided to show off your knowledge of the question: 
-
-*"You know I think we really need this. I just recently learnt this 'specific language of algorithm transfer'."*
-
-*"Seriously?"* Alan asked with some interest.
-
-*"Well, yes."*
-
-After a few seconds, Turing came to the logical conclusion of entrusting you with the job:
-
-*"Listen, do you want to do it yourself? Get some not-so-busy 
-and get on with it. And I'll continue to work on my mechanical code-breaking machine.*
-
-After thinking about it for a few seconds, you decide it's a great idea:
-
-*"Yes, I'll do everything in the best possible way!"*
-
-
-## Chapter I
-
-## Introduction
-
-In this project you will develop your own implementation of the string.h library in the C programming language with some additions (with your own implementation of the sprintf and sscanf functions). The string.h library is the main C library for string handling. As part of the project, you'll work on tasks involving string data and consolidate the structured approach.
-
-
-## Chapter II
-
-## Information
-
-The C language has a set of functions that implement operations on strings (character strings and byte strings) in its standard library. Various operations such as copy, concatenate, tokenize, and search are supported. For strings, the standard library uses the convention that strings are null-terminated: a string of n characters is represented as an array of n + 1 elements, the last of which is a "NULL" character. 
-
-The only support for strings in the actual programming language is that the compiler translates quoted string constants to null-terminated strings.
 
 ### string.h Types
 
@@ -179,29 +112,10 @@ where:
 ## Part 1. Implementation of the string.h library functions
 
 It is necessary to implement the described [above](#stringh-functions) functions of the string.h library: 
- - The library must be developed in C language of C11 standard using gcc compiler.
- - The library's code, including headers, makefile and library itself must be located in the src folder on the develop branch.
- - Do not use outdated and legacy language constructions and library functions. Pay attention to the legacy and obsolete marks in the official documentation on the language and the libraries used. Use the POSIX.1-2017 standard.
- - When writing code it is necessary to follow the Google style.
- - Make it as a static library named *s21_string.a* (with the header file s21_string.h).
- - The library must be developed in accordance with the principles of structured programming, duplication in the code must be avoided.
- - Prepare a full coverage of the library's functions by unit-tests using the Check library.
- - Test's code and the executable file must be located in the src folder or its any subfolder.
- - Unit-tests must check the results of your implementation by comparing them with the implementation of the standard string.h library.
- - Unit tests must cover at least 80% of each function (checked using gcov).
- - Provide a Makefile for building the library and tests (with the targets all, clean, test, s21_string.a, gcov_report).
- - The gcov_report target should generate a gcov report in the form of an html page. Unit tests must be run with gcov flags to do this.
- - Use prefix s21_ before each function.
- - It is forbidden to copy the implementation of the standard string.h library and other string processing libraries and to use them anywhere, except unit-tests.
- - It is forbidden to use system errors arrays, including those not specified in POSIX (sys_nerr, sys_errlist). Instead, you need to implement your own platform-specific errors arrays, as it was mentioned in the description of the [strerror function](#stringh-functions).
- - You must follow the logic of the standard string.h library (in terms of checks, working with memory and behavior in emergency situations — tests will help you with that).
- - Functions must work with z-string made of single-byte characters in ASCII encoding.
 
 ## Part 2. Partial implementation of the sprintf function
 
 It is necessary to implement the sprintf function from the stdio.h library:
-- The function must be placed in the s21_string.h library.
-- All of the requirements outlined in [the first part](#part-1-implementation-of-the-stringh-library-functions) are applied to function implementation.
 - The next partial formatting must be supported:
   - Specifiers: c, d, f, s, u, %
   - Flags: -, +, (space)
@@ -209,29 +123,8 @@ It is necessary to implement the sprintf function from the stdio.h library:
   - Precision description: .(number)
   - Length description: h, l
 
-## Part 3. Bonus. Implementation of some format modifiers of the sprintf function
 
-Bonus assignment for extra points. You need to implement some format modifiers of the sprintf function from the stdio.h library:
-- The function must be placed in the s21_string.h library.
-- All of the requirements outlined in [the first part](#part-1-implementation-of-the-stringh-library-functions) are applied to function implementation.
-- The next additional format modifiers must be supported:
-  - Specifiers: g, G, e, E, x, X, o, p
-  - Flags: #, 0
-  - Width description: *
-  - Precision description: .*
-  - Length description: L
+## Part 3. Bonus. Implementation of special string processing functions
+Implementatiom of some string processing functions from the String class (described [here](#special-string-processing-functions-from-the-string-class-in-c)):
 
-## Part 4. Bonus. Implementation of the sscanf function
-
-Bonus assignment for extra points. You need to implement the sscanf function from the stdio.h library:
-- The function must be placed in the s21_string.h library.
-- All of the requirements outlined in [the first part](#part-1-implementation-of-the-stringh-library-functions) are applied to function implementation.
-- Full formatting (including flags, widths, precision, modifiers and conversion types) must be supported.
-
-
-## Part 5. Bonus. Implementation of special string processing functions
-
-Bonus assignment for extra points. You need to implement some string processing functions from the String class (described [here](#special-string-processing-functions-from-the-string-class-in-c)):
-- The functions must be placed in the s21_string.h library.
-- All of the requirements outlined in [the first part](#part-1-implementation-of-the-stringh-library-functions) are applied to functions implementation excluding the requirement to compare your implementation with the standard.
 
